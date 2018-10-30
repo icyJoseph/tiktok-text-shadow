@@ -1,0 +1,67 @@
+body {
+  background: black;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.text {
+  font-size: 100pt;
+}
+
+/* new approach */
+.with-shadow {
+  color: rgba(34, 246, 232, 0.5);
+  text-shadow: 3px 3px 1px white, 6px 6px 1px #fd2c54;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+  margin: 10px 20px;
+  height: 50px;
+  font-size: 30pt;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* old approach */
+.middle {
+  z-index: 5;
+  display: flex;
+  position: relative;
+  color: white;
+}
+
+.middle::before {
+  content: attr(data-letter);
+  z-index: -5;
+  position: absolute;
+  transform: translate(4px, 4px);
+  color: #fd2c54;
+  top: 0;
+  left: 0;
+}
+
+.middle::after {
+  content: attr(data-letter);
+  z-index: 0;
+  position: absolute;
+  transform: translate(-3px, -3px);
+  color: rgba(34, 246, 232, 0.5);
+  top: 0;
+  left: 0;
+}
